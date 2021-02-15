@@ -1,0 +1,165 @@
+﻿@model IEnumerable<SBS.Models.Vehicle>
+
+@{
+    Layout = null;
+}
+<!--This display all booking request details of customer vehicle serviceing.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Home</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="row mx-5">
+        @Html.ActionLink("Create Dealer", "CreateDealer") &nbsp; &nbsp;   @Html.ActionLink("Create Mechanic", "CreateMechanic")  &nbsp; &nbsp; @Html.ActionLink("Create Services", "CreateService")
+    </div>
+    <div class="row pt-3">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Booking request List</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayName("CustomerName")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("LicensePlate")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Model")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Make")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("RegistrationDate")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("ChassisNo")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("BookingStatus")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Action")
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CustomerName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LicensePlate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Make)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Model)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.RegistrationDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ChassisNo)
+
+                                            </td>
+                                            @if (item.BookingStatus == true)
+                                            {
+                                                <td style="color:green">
+                                                    @Html.DisplayName("Confirm")
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td style="color:red">
+                                                    @Html.DisplayName("Not Confirmed")
+                                                </td>
+                                            }
+                                            <td>
+                                                @Html.ActionLink("Update Details", "UpdateOneVehicleData", new { id = item.Id }) |
+                                                @if (item.BookingStatus == true)
+                                                {
+                                                    @Html.ActionLink("Check Details", "GetVehicleData", new { id = item.Id })
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayName("CustomerName")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("LicensePlate")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Model")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Make")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("RegistrationDate")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("ChassisNo")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("BookingStatus")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Action")
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/adminlte/js")
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+</body>
+</html>

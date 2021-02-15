@@ -1,0 +1,16 @@
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\SBS.DAL.dll
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\SBS.DAL.pdb
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\SBS.Models.dll
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\SBS.Models.pdb
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\obj\Debug\SBS.DAL.csprojAssemblyReference.cache
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\obj\Debug\SBS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\obj\Debug\SBS.DAL.csproj.CopyComplete
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\obj\Debug\SBS.DAL.dll
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\obj\Debug\SBS.DAL.pdb
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\SBS.DAL.dll.config
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\EntityFramework.dll
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\EntityFramework.xml
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\AutoMapper.dll
+C:\Users\NISHU\source\repos\DotNetAssignment\SBS.DAL\bin\Debug\AutoMapper.xml

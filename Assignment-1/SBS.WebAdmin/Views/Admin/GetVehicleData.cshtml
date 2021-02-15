@@ -1,0 +1,124 @@
+﻿@model SBS.Models.Vehicle
+@{
+    Layout = null;
+}
+<!--This page is used for display one particular vehicle booking detail.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="widivh=device-widivh" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>GetVehicleData</title>
+</head>
+<body>
+    <div>
+        <h4>Vehicle Booking Data</h4>
+        <hr />
+        <div class="mx-5">
+            <div>
+                <b>@Html.DisplayNameFor(model => model.CustomerName)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.CustomerName)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.LicensePlate)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.LicensePlate)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Make)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Make)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Model)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Model)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.RegistrationDate)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.RegistrationDate)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.ChassisNo)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.ChassisNo)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.BookingStatus)</b>
+            </div>
+            @if (Model.BookingStatus == true)
+            {
+                <div>
+                    @Html.DisplayName("Booked")
+                </div>
+            }
+            else
+            {
+                <div>
+                    @Html.DisplayName("Not Booked")
+                </div>
+            }
+            <div>
+                <b>@Html.DisplayNameFor(model => model.BookingConfirmDate)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.BookingConfirmDate)
+            </div>
+            <div>
+                <b> @Html.DisplayNameFor(model => model.DeliveryDate)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.DeliveryDate)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Comments)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Comments)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.DealerName)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.DealerName)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.MechanicName)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.MechanicName)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.ServiceName)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.ServiceName)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.ServiceTime)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.ServiceTime)
+            </div>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.ServicePrice)</b>
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.ServicePrice)
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "UpdateOneVehicleData", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Home")
+    </p>
+</body>
+</html>

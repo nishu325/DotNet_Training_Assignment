@@ -1,0 +1,87 @@
+﻿@model SBS.Models.Customer
+@{
+    Layout = null;
+}
+
+<!--This page is used for new customer registration with all the details.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>CustomerRegistration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <!-- form card registration -->
+                        <div class="card rounded shadow shadow-sm my-5">
+                            <div class="card-header">
+                                <h3 class="mb-0">Registration</h3>
+                            </div>
+                            <div class="card-body">
+                                @using (Html.BeginForm("CustomerRegistration", "Customer", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Name)
+                                        @Html.TextBoxFor(m => m.Name, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your Name" })
+                                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Address, "Address ")
+                                        @Html.TextBoxFor(m => m.Address, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your Address" })
+                                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.City)
+                                        @Html.TextBoxFor(m => m.City, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your City" })
+                                        @Html.ValidationMessageFor(m => m.City, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.State)
+                                        @Html.TextBoxFor(m => m.State, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your State" })
+                                        @Html.ValidationMessageFor(m => m.State, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.ZipCode)
+                                        @Html.TextBoxFor(m => m.ZipCode, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your Zipcode" })
+                                        @Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Email)
+                                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your email-id." })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password)
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your Password" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.MobileNo)
+                                        @Html.TextBoxFor(m => m.MobileNo, "", new { @class = "form-control form-control-lg rounded-0", @placeholder = "Enter your ContactNo" })
+                                        @Html.ValidationMessageFor(m => m.MobileNo, "", new { @class = "badge badge-danger" })
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Register</button>
+                                }
+                            </div>
+                            <!--/card-block-->
+                        </div>
+                        <!-- /form card register -->
+                    </div>
+                </div>
+                <!--/row-->
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

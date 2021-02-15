@@ -1,0 +1,109 @@
+﻿@model SBS.Models.Vehicle
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>VehicleDetails</title>
+</head>
+<body>
+    @using (Html.BeginForm("GetOneVehicleData", "Admin",FormMethod.Post))
+    {
+        <div>
+            <h4>Vehicle</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LicensePlate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LicensePlate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Make)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Make)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Model)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Model)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RegistrationDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RegistrationDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ChassisNo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChassisNo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ServiceId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ServiceId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DealerId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DealerId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MechanicId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MechanicId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CustomerId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerId)
+                </dd>
+
+            </dl>
+        </div>
+    }
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

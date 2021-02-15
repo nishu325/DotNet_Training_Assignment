@@ -1,0 +1,75 @@
+﻿@model SBS.Models.Vehicle
+
+@{
+    Layout = null;
+}
+<!--This page is used for customer vehicle service appointment.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Book Appointment</title>
+</head>
+<body>
+    @using (Html.BeginForm("Book", "Customer", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <h4 style="text-align:center">Vehicle Appointment booking</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.LicensePlate, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.LicensePlate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LicensePlate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.Make, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Make, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Make, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <b> @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.RegistrationDate, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.RegistrationDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegistrationDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group justify-content-center">
+                <b> @Html.LabelFor(model => model.ChassisNo, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.ChassisNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ChassisNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <b> @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-4">
+                    @Html.TextAreaFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Book" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
